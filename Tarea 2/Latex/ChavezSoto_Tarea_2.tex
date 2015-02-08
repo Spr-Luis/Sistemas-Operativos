@@ -1,0 +1,96 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[left=3cm,right=3cm,top=4cm,bottom=3cm]{geometry}
+\author{Chávez Soto Luis Armando}
+\title{TAREA NO. 2}
+\date{7 de Febrero del 2015}
+\begin{document}
+
+	\maketitle
+
+\begin{abstract}
+Trabajo de Investigación:
+
+	\begin{itemize}
+		\item ¿Qué es \textit{bootstrapping} a nivel de \textit{software} y \textit{hardware}?.
+		\item ¿Qué es la arquitectura \textit{little-endian} y\textit{ big-endian}?.
+		\item El procesador de tu equipo personal, ¿qué arquitectura utiliza?.	
+	\end{itemize}
+	 Realizar en LaTeX. 
+\end{abstract}
+
+
+\textbf{¿Qué es \textit{bootstrapping} a nivel de \textit{software} y \textit{hardware}?}
+ 
+ $ $
+ 
+Para definir que es el \textit{bootstrapping}, debemos establecer primeramente que el termino es utilizado en la estadística y en los negocios, pero para nuestro fines debemos establecer que será utilizado en la informática. Y esté es utilizado para describir el proceso de inicio de cualquier computador. Es referido al programa que inicializa el sistema operativo.
+
+El término originalmente se utilizó a principios de los \textit{50's}, y era referido al botón de arranque para cargar un programa más pequeño que a su vez cargaría uno más amplio como un sistema operativo. El término se deriva de la expresión \begin{center}\textit{ "Pulling yourself up by your own bootstraps"}\end{center}
+
+A nivel del hardware podríamos decir que refiere al ser ejecutado inmediatamente que termina el proceso POST (Power On Self Test), en donde se verifica e inicializa todos los componentes de entrada y salida de cómputo así como diagnosticar el estado del hardware y si esté carga satisfactoriamente el bootstrapping hace su aparición.
+
+\begin{itemize}
+\item GNU grand unified bootloader (GRUB): Un multiboot que especifica y permite al usuario escoger el sistema operativo. 
+\item NT loader (NTLDR): Un bootloader de Microsoft Windows NT OS que usualmente corre desde el disco duro.
+\item Linux loader (LILO): Un bootloader de Linux que por lo general corre desde un disco duro o una unidad de cd. 
+\end{itemize}
+
+A nivel de software el \textit{bootstrapping} puede referirse a la forma en como se preparan los entornos de programación. En donde la cuestión es preparar programas complejos con un editor de texto simple e ir creando lenguajes más sofisticados y complejos.
+
+$ $
+
+\textbf{¿Qué es la arquitectura \textit{little-endian} y\textit{ big-endian}?}
+ 
+ $ $
+
+Básicamente se define como se representa la información, la forma en la que se almacena en el computador y esto puede cobrar una especial relevancia cuando se trata de trabajar con datos de más de un byte.
+
+La representación de los datos en bytes de define mediante \textit{el byte más representativo(MSB)} o \textit{el menos representativo (LSB)} estos formatos son nombrados como \textbf{Big Endian} aquel que ordena los bytes del más significativo al menos significativo, y el \textbf{Little Endian} como el menos significativo al más significativo. 
+
+$ $
+
+\emph{Por ejemplo:}
+$ $
+La representación del siguiente número hexadecimal  \textbf{\textit{0x74726563650d0a}}, sería de la forma:
+$ $
+\begin{center}
+0x74 0x72 0x65 0x63 0x65 0x0d 0x0a - Big Endian
+
+
+0x0a 0x0d 0x65 0x63 0x65 0x72 0x74 - Little Endian
+\end{center}
+
+$ $
+
+\textbf{El procesador de tu equipo personal, ¿qué arquitectura utiliza?}
+ 
+ $ $
+ 
+ El procesador de mi computador es un Intel Core i5 a 2.6 GHz, bajo un sistema UNIX en donde utiliza una arquitectura Big Endian.
+ 
+ $ $
+ 
+ $ $
+
+ $ $
+
+ $ $
+ 
+ $ $
+ 
+ $ $
+
+ $ $
+
+ $ $
+\textbf{Bibliografía}
+ 
+\begin{itemize}
+		\item Bootstrap, Technopedia - http://www.techopedia.com/definition/3328/bootstrap.
+		\item Los formatos Big Endian y Little Endian - http://www.arumeinformatica.es/blog/los-formatos-big-endian-y-little-endian/
+		\item Bootstrapping, Wikipedia - http://es.wikipedia.org/wiki/Bootstrapping
+	\end{itemize} 
+ 
+\end{document}
