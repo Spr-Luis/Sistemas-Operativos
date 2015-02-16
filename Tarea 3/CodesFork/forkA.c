@@ -1,8 +1,18 @@
-#include <unistd.h>					
-#include </usr/include/x86_64-linux-gnu/sys/types.h>	
+#include <unistd.h>		
+
+// Para sistemas Linux
+//#include </usr/include/x86_64-linux-gnu/sys/types.h>
+// Para sistemas Unix
+#include <sys/types.h>
+
 #include <errno.h>
 #include <stdio.h>
-#include <x86_64-linux-gnu/sys/wait.h> 			
+
+// Para sistemas Linux
+//#include <x86_64-linux-gnu/sys/wait.h>
+// Para sistemas Unix
+#include <sys/wait.h>
+
 #include <stdlib.h>
 
 main()

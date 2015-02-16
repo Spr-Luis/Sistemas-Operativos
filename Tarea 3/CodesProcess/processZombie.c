@@ -1,6 +1,11 @@
 #include <stdlib.h> 
-#include </usr/include/x86_64-linux-gnu/sys/types.h> 
-#include <unistd.h> 
+
+// Para sistemas Linux
+//#include </usr/include/x86_64-linux-gnu/sys/types.h>
+// Para sistemas Unix
+#include <sys/types.h>
+
+#include <unistd.h>
 
 int main () 
 {
