@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <stdint.h> /* 64 bits */
 #define NUM_THREADS	4
 
 void *do_something(void *arg)
@@ -39,7 +40,7 @@ int main(int argc, char *argv[])
   for(t=0;t<NUM_THREADS;t++) 
   {
    printf("Main: creando el hilo %d\n", t);
-   rc = pthread_create(&thread[t], &attr, do_something, (void *)t); 
+   rc = pthread_create(&thread[t], &attr, do_something, (void *)(intptr_t)t);
    if (rc) 
    {
      printf("ERROR; codigo devuelto para pthread_create() es %d\n", rc);

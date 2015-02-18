@@ -1,4 +1,9 @@
-#include <unistd.h>		
+/*
+    ps af -o pid.ppid.stat.nice.uname.cmd.pmem.pcpu.time
+ */
+
+
+#include <unistd.h>		// Definición de Fork()
 
 // Para sistemas Linux
 //#include </usr/include/x86_64-linux-gnu/sys/types.h>
@@ -25,6 +30,7 @@ main()
 	
     if (childpid >= 0) 
     {
+        // Proceso Hijo
         if (childpid == 0) 
         {
             printf("Hijo: Soy el Proceso HIJO!\n");
@@ -38,6 +44,7 @@ main()
 	    printf("Hijo: Adios!\n");
 	    exit(retval); 
 	}
+        // Proceso Padre
 	else
 	{
 		printf("Padre: Soy el Proceso PADRE!\n");
@@ -45,7 +52,7 @@ main()
 		printf("Padre: El valor de mi copia de childpid es %d\n", childpid);
 		printf("Padre: Ahora voy a esperar a mi proceso HIJO para salir.\n");
 		wait(&status); 
-		printf("Padre: Codigo de salida del Proceso HIJO es: %d\n", WEXITSTATUS(status));
+		printf("Padre: Codigo de salida del Proceso HIJO es: %d\n", WEXITSTATUS(status)); // WEXITSTATUS() Macros del sistema de Wait (Lo que esta arrojando la salida del proceso)
 		printf("Padre: Adios!\n");
 		exit(0);  
 	}
