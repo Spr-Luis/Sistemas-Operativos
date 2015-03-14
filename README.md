@@ -8,7 +8,7 @@ El repositorio contiene las actividades realizadas en clase, así como las tarea
 El material aqui mostrado fue elaborado por [@Spr_Luis] durante el curso, las tareas y actividades así como las presentaciones son materal elaborado por la Ing. Yesenia Carrera Fournier.
 
 ### Semestre
- - 2016 - 1
+ - 2015 - 2
 
 License
 ----
