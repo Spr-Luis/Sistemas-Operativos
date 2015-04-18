@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 #include <stdint.h> /* 64 bits */
-#define NUM_THREADS 4
+
+#define NUM_THREADS 1
 
 void *do_something(void *arg)
 {
