@@ -1,0 +1,146 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel} 
+\usepackage{graphicx}
+\graphicspath{ {screen/} }
+\usepackage{enumerate} % enumerados
+\usepackage{listings}
+\lstset{language=C}
+
+\usepackage{color}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,                    % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  otherkeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,                       % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+\usepackage[left=3cm,right=3cm,top=4cm,bottom=3cm]{geometry}
+
+\author{Chávez Soto Luis Armando}
+\title{Presentación Sistemas Distribuidos, aplicados a Spotify}
+\date{22 de Mayo del 2015}
+
+\begin{document}
+	
+	\maketitle
+	
+\textbf{¿Qué es un Sistema?}
+\newline	
+\newline	
+Los componentes de Hardware y Software localizados en computadores unidos mediante red, comunican y coordinan sus acciones solo mediante el paso de mensajes.
+\newline
+\newline
+El cual se basa en la concurrencia, como la capacidad del sistema para manejar recursos compartidos de forma independiente. Una inexistencia del reloj global que es la coordinación y monitorización de como se desarrolla la ejecución en los sistemas distribuidos. Y una posibilidad a fallos independientes que es la posibilidad  de una falla independiente en el sistema, y que este permita que la parte restante  siga en ejecución.					
+\newline
+\newline
+
+\textbf{¿Por qué construir sistemas distribuidos?}
+\newline
+\newline
+La única motivación para hacerlos es el deseo de compartir recursos. Y aunque el término recurso es un poco abstracto, se caracteriza por el rango de cosas que pueden ser compartidas de forma útil en un sistema de computadores conectados en red. Algunos ejemplos de Sistemas Distribuidos son los siguientes:
+
+\begin{itemize}
+		\item Internet - Es un conjunto descentralizado de redes de comunicación interconectadas que utilizan la familia de protocolos TCP/IP, lo cual garantiza que las redes físicas heterogéneas que la componen funcionen como una red lógica única, de alcance mundial.
+		\item Intranet - Una intranet es una red informática que utiliza la tecnología del Protocolo de Internet para compartir información, sistemas operativos o servicios de computación dentro de una organización. 
+		\item Computo Móvil - La computación móvil es una serie de artefactos y equipos portátiles inalámbricos que hacen uso de la computación para lograr su funcionamiento se basa en los principios de los sistemas distribuidos para ser ahincó en la integración de los dispositivos a travez de clientes móviles.
+		\item Computo Ubicuo - es entendida como la integración de la informática en el entorno de la persona, de forma que los ordenadores no se perciban como objetos diferenciados. Esta disciplina se conoce en inglés por otros términos como Pervasive computing, Calm technology, Things That Think y Everyware. Desde hace unos años también se denomina inteligencia ambiental.
+	\end{itemize}
+
+\textbf{Desafíos}
+\newline
+\newline
+
+Por una parte se encuentra la heterogeneidad, la cual es la variedad y diferencia de todo lo que puede componer a un sistema distribuido. Redes, Hardware, SO, Lenguajes de programación, recursos humanos, etc. 
+\newline
+La seguridad, la cual integra 3 definiciones importantes como la confidencialidad, la integridad y la disponibilidad, que se defiende como la protección contra el descubrimiento por individuos no autorizados, la protección contra la alteración o corrupción, la protección contra interferencia con los procedimientos de acceso a los recursos.
+\newline
+La escalabilidad, es que un sistema distribuido opere  efectiva y eficientemente en muchas escalas diferentes. Y por último se encuentra la concurrencia, como la capacidad de que varios clientes intenten acceder a un recurso compartido a la vez.
+\newline
+\newline
+\textbf{Spotify}
+\newline
+\newline
+
+Spotify es una aplicación empleada para la reproducción de música vía streaming disponible en los sistemas operativos Microsoft Windows, Mac OS X, Linux, Windows Phone, Symbian, iOS, Android y BlackBerry (multiplataforma). Permite escuchar en modo radio buscando por artista, álbum o listas de reproducción creadas por los propios usuarios. El programa fue lanzado el 7 de octubre de 2008 al mercado europeo, mientras que su implantación en otros países se realizó a lo largo de 2009. La empresa tiene por objetivo:
+
+\begin{itemize}
+		\item Tener un gran catálogo de música.
+		\item Disponibilidad donde sea.
+		\item Una gran experiencia de usuario.
+		\item Rápido y seguro.
+		\item Escalable para muchos usuarios.
+\end{itemize}
+
+Dichos objetivos, por si solos engloban la definición de un sistema distribuido, por lo cual creo que Spotify, es la mejor forma de representar a uno.
+
+	%\includegraphics[width=\linewidth]{run_programa_3}
+
+	%\includegraphics[width=\linewidth]{run_programa_4}
+
+
+\textbf{¿Cómo funciona?}
+\newline
+
+Tiene como principal soporte una base datos, donde se encuentra almacenada toda la información con respecto a su catálogo de música. Es la forma como los usuarios encuentran música, en donde el contenido es registrado por etiquetas, cuentan con más de 10 millones de tracks y cada día el catálogo crece 10k por día. 
+\newline
+\newline
+En la imagen siguiente se muestra como se distribuyen las búsquedas al catálogo, en la base de datos de Spotify.
+
+	\includegraphics[width=\linewidth]{bd}
+
+A continuación Spotify se encarga de hacerte llegar la música vía Streaming, pero no directamente desde sus servidores, sino mediante P2P, a otros sistemas que ya escucharon esa canción y se encuentra en su sistema de cache. Esto es una muy buena planeación de Spotify para distribuir los datos, terminando con casi todas las adversidades que pudieran encontrar y generando muchas ganancias con tan poca inversión. 
+
+	\includegraphics[width=\linewidth]{dm}
+
+\textbf{¿Qué es un servicio P2P?}
+\newline
+\newline
+
+Es una red de computadores de un mismo nivel que funcionan sin clientes ni servidores, sino que son nodos. Y se pueden comportar como clientes como servidores. Permitiendo un intercambio directo de información.
+
+\textbf{El negocio de los Sistemas Distribuidos?}
+\newline
+\newline
+Como verán a continuación Spotify, ni siquiera se toma la molestia de pagar buenos servidores, porque todo el sistema se basa principalmente en las conexiones de los computadores hacen mediante P2P.Spotify genera el siguiente tráfico, con un 55.4\% - Cache del Cliente, un 35.8\% - P2P Network y tan solo un 8.8\% - Servidores.
+\newline
+\newline
+\textbf{Bibliografía}
+\newline
+\newline
+ 
+\begin{itemize}
+		\item Spotify (Wikipedia) - http://es.wikipedia.org/wiki/Spotify
+		\item Spotify: behind the scenes - http://es.slideshare.net/ricardovice/spotify-behind-the-scenes	
+	\end{itemize} 
+ 
+\end{document}
+
+
+\end{document}
