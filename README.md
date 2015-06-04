@@ -5,7 +5,7 @@ El repositorio contiene las actividades realizadas en clase, así como las tarea
   - Programa de Estudios de la asignatura de [Sistemas Operativos]
 
 
-El material aqui mostrado fue elaborado por [@Spr_Luis] durante el curso, las tareas y actividades así como las presentaciones son materal elaborado por la Ing. Yesenia Carrera Fournier.
+El material aqui mostrado fue elaborado por [@Spr_Luis] durante el curso, las tareas y actividades así como las presentaciones son material elaborado por la Ing. Yesenia Carrera Fournier.
 
 ### Semestre
  - 2015 - 2
